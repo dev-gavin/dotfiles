@@ -580,7 +580,7 @@
 				<real>0.83921568627450982</real>
 			</dict>
 			<key>BM Growl</key>
-			<true/>
+			<false/>
 			<key>Background Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1023,6 +1023,8 @@
 			<real>0.0</real>
 			<key>Mouse Reporting</key>
 			<true/>
+			<key>Mouse Reporting allow mouse wheel</key>
+			<true/>
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
@@ -1108,7 +1110,7 @@
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
-			<true/>
+			<false/>
 			<key>Window Type</key>
 			<integer>12</integer>
 			<key>Working Directory</key>

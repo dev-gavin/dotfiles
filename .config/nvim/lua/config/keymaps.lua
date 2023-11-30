@@ -12,3 +12,8 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
 
 vim.keymap.set("n", "<leader>gg", ":G<CR>", { silent = true, desc = "Vim-Fugitive" })
+
+vim.keymap.set("x", "<leader>p", '"_dP')
+
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("v", "<leader>y", '"+y')
