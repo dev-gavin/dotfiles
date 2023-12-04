@@ -13,16 +13,25 @@ local M = {
       },
       views = {
         cmdline_popup = {
-          border = {
-            style = "none",
-            padding = { 1, 2 },
+          position = {
+            row = "15%",
           },
-          filter_options = {},
           win_options = {
             winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+            -- winhighlight = {
+            --   Normal = "NormalFloat",
+            --   FloatBorder = "FloatBorder",
+            -- },
           },
         },
       },
+      notify = {
+        replace = true,
+      },
+      -- messages = {
+      --   enabled = false,
+      --   view = "mini",
+      -- },
     },
   },
   {
@@ -82,7 +91,8 @@ local M = {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
       window = {
-        position = "right",
+        close_if_last_window = true,
+        position = "float",
       },
     },
   },
