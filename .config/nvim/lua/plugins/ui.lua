@@ -92,20 +92,51 @@ local M = {
     opts = {
       window = {
         close_if_last_window = true,
-        position = "float",
+        position = "current",
       },
     },
   },
 
   {
-    "craftzdog/solarized-osaka.nvim",
-    lazy = false,
-    priority = 1000,
+    "nvim-lualine/lualine.nvim",
     opts = {
-      style = "moon",
-      transparent = false,
+      options = {
+        section_separators = "",
+        component_separators = "",
+      },
+      sections = {
+        lualine_a = {
+          {
+            "buffers",
+          },
+        },
+      },
     },
   },
+
+  {
+    "akinsho/bufferline.nvim",
+    enabled = false,
+  },
+
+  {
+    "bluz71/vim-nightfly-colors",
+    lazy = false,
+    config = function()
+      vim.g.nightflyVirtualTextColor = true
+    end,
+    priority = 1000,
+  },
+
+  -- {
+  --   "craftzdog/solarized-osaka.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {
+  --     style = "night",
+  --     transparent = false,
+  --   },
+  -- },
 
   -- { "EdenEast/nightfox.nvim" },
   --
@@ -120,7 +151,7 @@ local M = {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "solarized-osaka",
+      colorscheme = "nightfly",
     },
   },
 }
