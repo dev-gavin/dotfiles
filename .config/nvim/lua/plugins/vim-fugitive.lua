@@ -2,6 +2,9 @@ local M = {
   {
     "tpope/vim-fugitive",
     cmd = { "G" },
+    keys = {
+      { "<leader>gs", "<cmd>G<CR>", desc = "Git Status" },
+    },
   },
   {
     "tpope/vim-rhubarb",

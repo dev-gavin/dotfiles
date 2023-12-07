@@ -10,6 +10,12 @@ vim.keymap.del("n", "<leader>w-")
 vim.keymap.del("n", "<leader>w|")
 vim.keymap.del("n", "<leader>-")
 vim.keymap.del("n", "<leader>|")
+vim.keymap.del("n", "<leader>gg")
+vim.keymap.del("n", "<leader>gG")
+vim.keymap.del("n", "<leader>ge")
+vim.keymap.del("n", "<leader>fe")
+vim.keymap.del("n", "<leader>fE")
+
 --
 
 vim.keymap.set("n", "n", "nzzzv", { desc = "Better Next" })
@@ -29,7 +35,7 @@ vim.keymap.set(
 )
 
 -- TODO: move this keymap to its own file
-vim.keymap.set("n", "<leader>gg", ":G<CR>", { silent = true, desc = "Vim-Fugitive" })
+-- vim.keymap.set("n", "<leader>gg", ":G<CR>", { silent = true, desc = "Vim-Fugitive" })
 
 vim.keymap.set("x", "<leader>p", '"_dP')
 
