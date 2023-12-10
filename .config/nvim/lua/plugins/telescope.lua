@@ -18,6 +18,8 @@ local M = {
       { "<leader>so", "<cmd>Telescope vim_options<cr>", desc = "Options" },
       { "<leader>sc", "<cmd>Telescope command_history<cr>", desc = "Command History" },
       { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
+      { "<leader>uC", "<cmd>Telescope colorscheme<cr>", desc = "Colorscheme with preview" },
+      { "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer" },
     }
   end,
     -- add a keymap to browse plugin files
@@ -43,7 +45,6 @@ local M = {
     --   -- search
     --   { '<leader>s"', "<cmd>Telescope registers<cr>", desc = "Registers" },
     --   { "<leader>sa", "<cmd>Telescope autocommands<cr>", desc = "Auto Commands" },
-    --   { "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer" },
     --   { "<leader>sd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document diagnostics" },
     --   { "<leader>sD", "<cmd>Telescope diagnostics<cr>", desc = "Workspace diagnostics" },
     --   { "<leader>sG", Util.telescope("live_grep", { cwd = false }), desc = "Grep (cwd)" },
@@ -85,6 +86,12 @@ local M = {
       layout_config = { prompt_position = "top" },
       sorting_strategy = "ascending",
       winblend = 0,
+    },
+    pickers = {
+      colorscheme = {
+        enable_preview = true,
+        test = "everforest"
+      },
     },
   },
 }

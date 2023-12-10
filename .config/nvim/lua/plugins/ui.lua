@@ -18,10 +18,6 @@ local M = {
           },
           win_options = {
             winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
-            -- winhighlight = {
-            --   Normal = "NormalFloat",
-            --   FloatBorder = "FloatBorder",
-            -- },
           },
         },
       },
@@ -63,30 +59,6 @@ local M = {
     },
   },
 
-  -- {
-  --   "neanias/everforest-nvim",
-  --   version = false,
-  --   lazy = false,
-  --   priority = 1000, -- make sure to load this before all the other start plugins
-  --   -- Optional; default configuration will be used if setup isn't called.
-  --   config = function()
-  --     require("everforest").setup({
-  --       -- Your config here
-  --     })
-  --   end,
-  -- },
-
-  -- {
-  --   "nvim-lualine/lualine.nvim",
-  -- event = "VeryLazy",
-  -- opts = function()
-  --   return {
-  --     --[[add your custom lualine config here]]
-  --     theme = "everforest",
-  --   }
-  -- end,
-  -- },
-
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
@@ -94,6 +66,9 @@ local M = {
         close_if_last_window = true,
         position = "current",
       },
+    },
+    keys = {
+      { "<leader>e", "<cmd>Neotree<CR>" },
     },
   },
 
@@ -114,11 +89,21 @@ local M = {
     },
   },
 
-  {
-    "akinsho/bufferline.nvim",
-    enabled = false,
-  },
+  { "akinsho/bufferline.nvim", enabled = false },
 
+  { "gruvbox-community/gruvbox", event = "VeryLazy" },
+  { "EdenEast/nightfox.nvim", event = "VeryLazy" },
+
+  {
+    "neanias/everforest-nvim",
+    version = false,
+    event = "VeryLazy",
+    config = function()
+      require("everforest").setup({
+        -- Your config here
+      })
+    end,
+  },
   {
     "bluz71/vim-nightfly-colors",
     lazy = false,
@@ -126,6 +111,13 @@ local M = {
       vim.g.nightflyVirtualTextColor = true
     end,
     priority = 1000,
+  },
+
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "gruvbox",
+    },
   },
 
   -- {
@@ -138,7 +130,6 @@ local M = {
   --   },
   -- },
 
-  -- { "EdenEast/nightfox.nvim" },
   --
   -- {
   --   "sainnhe/gruvbox-material",
@@ -147,13 +138,6 @@ local M = {
   --     vim.g.gruvbox_material_better_performance = 1
   --   end,
   -- },
-
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "nightfly",
-    },
-  },
 }
 
 return M

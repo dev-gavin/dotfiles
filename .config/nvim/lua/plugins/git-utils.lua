@@ -1,17 +1,23 @@
 local M = {
   {
     "tpope/vim-fugitive",
-    cmd = { "G" },
     keys = {
       { "<leader>gs", "<cmd>G<CR>", desc = "Git Status" },
     },
   },
+
   {
     "tpope/vim-rhubarb",
+    lazy = false,
+  },
+
+  {
+    "junegunn/gv.vim",
     keys = {
-      { "<leader>gb", "<cmd>GBrowse<CR>", desc = "Open Github URL" },
+      { "<leader>gl", "<cmd>GV<CR>", desc = "Git Log" },
     },
   },
+
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     "lewis6991/gitsigns.nvim",
@@ -59,15 +65,15 @@ local M = {
         map("v", "<leader>hs", function()
           gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
         end, { desc = "stage git hunk" })
-        map("v", "<leader>hr", function()
+        map("v", "<leader>hx", function()
           gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
         end, { desc = "reset git hunk" })
         -- normal mode
         map("n", "<leader>hs", gs.stage_hunk, { desc = "git stage hunk" })
-        map("n", "<leader>hr", gs.reset_hunk, { desc = "git reset hunk" })
         map("n", "<leader>hS", gs.stage_buffer, { desc = "git Stage buffer" })
+        map("n", "<leader>hx", gs.reset_hunk, { desc = "git reset hunk" })
         map("n", "<leader>hu", gs.undo_stage_hunk, { desc = "undo stage hunk" })
-        map("n", "<leader>hR", gs.reset_buffer, { desc = "git Reset buffer" })
+        map("n", "<leader>hX", gs.reset_buffer, { desc = "git Reset buffer" })
         map("n", "<leader>hp", gs.preview_hunk, { desc = "preview git hunk" })
         map("n", "<leader>hb", function()
           gs.blame_line({ full = false })
