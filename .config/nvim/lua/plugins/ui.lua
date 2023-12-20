@@ -24,10 +24,9 @@ local M = {
       notify = {
         replace = true,
       },
-      -- messages = {
-      --   enabled = false,
-      --   view = "mini",
-      -- },
+      messages = {
+        enabled = false,
+      },
     },
   },
   {
@@ -64,7 +63,7 @@ local M = {
     opts = {
       window = {
         close_if_last_window = true,
-        position = "current",
+        position = "float",
       },
     },
     keys = {
@@ -91,6 +90,17 @@ local M = {
 
   { "akinsho/bufferline.nvim", enabled = false },
 
+  { "ofirgall/ofirkai.nvim", event = "VeryLazy" },
+
+  {
+    "tomasiser/vim-code-dark",
+    config = function()
+      vim.g.codedark_modern = 1
+      vim.g.codedark_italics = 1
+    end,
+    event = "VeryLazy",
+  },
+
   { "gruvbox-community/gruvbox", event = "VeryLazy" },
   { "EdenEast/nightfox.nvim", event = "VeryLazy" },
 
@@ -116,7 +126,7 @@ local M = {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "codedark",
     },
   },
 
