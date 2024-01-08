@@ -58,6 +58,8 @@ local M = {
     },
   },
 
+  { "briones-gabriel/darcula-solid.nvim", dependencies = "rktjmp/lush.nvim" },
+
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
@@ -101,6 +103,10 @@ local M = {
     event = "VeryLazy",
   },
 
+  {
+    "Th3Whit3Wolf/space-nvim",
+  },
+
   { "gruvbox-community/gruvbox", event = "VeryLazy" },
   { "EdenEast/nightfox.nvim", event = "VeryLazy" },
 
@@ -126,7 +132,7 @@ local M = {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "codedark",
+      colorscheme = "gruvbox",
     },
   },
 

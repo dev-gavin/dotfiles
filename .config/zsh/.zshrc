@@ -107,7 +107,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-gitp () {
+function gitp () {
   YELLOW='\e[0;33m'
   BOLD=$(tput bold)
   NORMAL=$(tput sgr0)
@@ -134,6 +134,24 @@ ${YELLOW}==========\n"
 # else
 #   export EDITOR='mvim'
 # fi
+
+
+alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
+alias nvim-kick="NVIM_APPNAME=kickstart nvim"
+alias nvim-chad="NVIM_APPNAME=NvChad nvim"
+alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+
+function nvims() {
+  items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "default" ]]; then
+    config=""
+  fi
+  NVIM_APPNAME=$config nvim $@
+}
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -186,8 +204,7 @@ alias push='git push origin'
 alias stat='git status'  # 'status' is protected name so using 'stat' instead
 alias tag='git tag'
 alias newtag='git tag -a'
-# alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias glog="git log --all --decorate --oneline --graph"
+alias glog="git log --graph --decorate --pretty=format:'%C(auto)%h %d %s %C(dim)%C(bold)%cr%Creset %C(cyan)%an'"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
