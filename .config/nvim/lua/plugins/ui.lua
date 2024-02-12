@@ -35,19 +35,23 @@ local M = {
     opts = {
       keywords = {
         TODO = { icon = " ", color = "info" },
-        HACK = { icon = " ", color = "warning" },
-        WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
-        PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+        -- HACK = { icon = " ", color = "warning" },
+        -- WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
+        -- PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
         NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
         TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
       },
       colors = {
         error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
-        warning = { "DiagnosticWarn", "WarningMsg", "#FBBF24" },
-        info = { "#e69333", "DiagnosticInfo" },
-        hint = { "DiagnosticHint", "#10B981" },
+        -- warning = { "DiagnosticWarn", "WarningMsg", "#FBBF24" },
+        warning = { "#FBBF24" },
+        -- info = { "DiagnosticInfo", "#2563EB" },
+        info = { "#2563EB" },
+        -- hint = { "DiagnosticHint", "#10B981" },
+        hint = { "#10B981" },
         default = { "Identifier", "#7C3AED" },
-        test = { "Identifier", "#FF00FF" },
+        -- test = { "Identifier", "#FF00FF" },
+        test = { "#FF00FF" },
       },
       -- TODO: todo
       -- HACK: hack
@@ -68,92 +72,47 @@ local M = {
         position = "float",
       },
     },
-    keys = {
-      { "<leader>e", "<cmd>Neotree<CR>" },
-    },
   },
 
+  -- {
+  --   "nvim-lualine/lualine.nvim",
+  --   opts = {
+  --     options = {
+  --       section_separators = "",
+  --       component_separators = "",
+  --     },
+  --     sections = {
+  --       lualine_a = {
+  --         {
+  --           "buffers",
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
+
+  { "Mofiqul/vscode.nvim" },
   {
-    "nvim-lualine/lualine.nvim",
+    "rebelot/kanagawa.nvim",
     opts = {
-      options = {
-        section_separators = "",
-        component_separators = "",
-      },
-      sections = {
-        lualine_a = {
-          {
-            "buffers",
+      colors = {
+        theme = {
+          all = {
+            ui = {
+              bg_gutter = "none",
+            },
           },
         },
       },
     },
   },
 
-  { "akinsho/bufferline.nvim", enabled = false },
-
-  { "ofirgall/ofirkai.nvim", event = "VeryLazy" },
-
-  {
-    "tomasiser/vim-code-dark",
-    config = function()
-      vim.g.codedark_modern = 1
-      vim.g.codedark_italics = 1
-    end,
-    event = "VeryLazy",
-  },
-
-  {
-    "Th3Whit3Wolf/space-nvim",
-  },
-
-  { "gruvbox-community/gruvbox", event = "VeryLazy" },
-  { "EdenEast/nightfox.nvim", event = "VeryLazy" },
-
-  {
-    "neanias/everforest-nvim",
-    version = false,
-    event = "VeryLazy",
-    config = function()
-      require("everforest").setup({
-        -- Your config here
-      })
-    end,
-  },
-  {
-    "bluz71/vim-nightfly-colors",
-    lazy = false,
-    config = function()
-      vim.g.nightflyVirtualTextColor = true
-    end,
-    priority = 1000,
-  },
-
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "kanagawa",
     },
   },
-
-  -- {
-  --   "craftzdog/solarized-osaka.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {
-  --     style = "night",
-  --     transparent = false,
-  --   },
-  -- },
-
-  --
-  -- {
-  --   "sainnhe/gruvbox-material",
-  --   config = function()
-  --     vim.g.gruvbox_material_background = "hard"
-  --     vim.g.gruvbox_material_better_performance = 1
-  --   end,
-  -- },
 }
 
 return M

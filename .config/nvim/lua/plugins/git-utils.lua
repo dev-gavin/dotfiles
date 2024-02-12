@@ -8,7 +8,7 @@ local M = {
 
   {
     "tpope/vim-rhubarb",
-    lazy = false,
+    lazy = gavin,
   },
 
   {

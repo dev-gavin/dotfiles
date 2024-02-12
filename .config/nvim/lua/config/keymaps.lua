@@ -4,17 +4,18 @@
 --
 
 -- Reset LazyKeymaps
-vim.keymap.del("n", "<leader>ww")
-vim.keymap.del("n", "<leader>wd")
-vim.keymap.del("n", "<leader>w-")
-vim.keymap.del("n", "<leader>w|")
-vim.keymap.del("n", "<leader>-")
-vim.keymap.del("n", "<leader>|")
-vim.keymap.del("n", "<leader>gg")
-vim.keymap.del("n", "<leader>gG")
-vim.keymap.del("n", "<leader>ge")
-vim.keymap.del("n", "<leader>fe")
-vim.keymap.del("n", "<leader>fE")
+vim.keymap.del("n", "<leader>l")
+vim.keymap.del("n", "<leader>L")
+-- vim.keymap.del("n", "<leader>wd")
+-- vim.keymap.del("n", "<leader>w-")
+-- vim.keymap.del("n", "<leader>w|")
+-- vim.keymap.del("n", "<leader>-")
+-- vim.keymap.del("n", "<leader>|")
+-- vim.keymap.del("n", "<leader>gg")
+-- vim.keymap.del("n", "<leader>gG")
+-- vim.keymap.del("n", "<leader>ge")
+-- vim.keymap.del("n", "<leader>fe")
+-- vim.keymap.del("n", "<leader>fE")
 
 --
 
@@ -43,3 +44,43 @@ vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
 
 vim.keymap.set("n", "J", "mzJ`z")
+
+-- local opts = {
+--   create_keymaps = false,
+--   create_commands = false,
+--   dispaly_counter = false,
+-- }
+--
+-- require("debugprint").setup(opts)
+
+-- vim.keymap.set("n", "<Leader>dl", function()
+--   -- Note: setting `expr=true` and returning the value are essential
+--   return require("debugprint").debugprint()
+-- end, {
+--   expr = true,
+-- })
+-- vim.keymap.set("n", "<Leader>dL", function()
+--   -- Note: setting `expr=true` and returning the value are essential
+--   return require("debugprint").debugprint({ above = true })
+-- end, {
+--   expr = true,
+-- })
+-- vim.keymap.set("n", "<Leader>dq", function()
+--   -- Note: setting `expr=true` and returning the value are essential
+--   return require("debugprint").debugprint({ variable = true })
+-- end, {
+--   expr = true,
+-- })
+-- vim.keymap.set("n", "<Leader>Dq", function()
+--   -- Note: setting `expr=true` and returning the value are essential
+--   return require("debugprint").debugprint({ above = true, variable = true })
+-- end, {
+--   expr = true,
+-- })
+-- vim.keymap.set("n", "<Leader>do", function()
+--   -- Note: setting `expr=true` and returning the value are essential
+--   -- It's also important to use motion = true for operator-pending motions
+--   return require("debugprint").debugprint({ motion = true })
+-- end, {
+--   expr = true,
+-- })
